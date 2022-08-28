@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tomsdoo/electronade-filestore-util/issues"
   },
-  "homepage": "https://github.com/tomsdoo/electronade-filestore-util#readme"
+  "homepage": "https://github.com/tomsdoo/electronade-filestore-util#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
 }
