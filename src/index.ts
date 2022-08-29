@@ -9,6 +9,10 @@ export class FileStore {
     // @ts-ignore
     return globalThis[this.exposedName].filestore.get(this.filePath, id);
   }
+  public async getIds(): Promise<string[]> {
+    // @ts-ignore
+    return globalThis[this.exposedName].filestore.getIds(this.filePath);
+  }
   public async save(item: object): Promise<any> {
     // @ts-ignore
     return globalThis[this.exposedName].filestore.save(this.filePath, item);

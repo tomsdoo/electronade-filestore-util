@@ -10,6 +10,8 @@ describe("FileStore class interfaces", () => {
       filestore: {
         get: (filePath: string, id: string) =>
           Promise.resolve({ _id: id, filePath }),
+        getIds: (filePath: string) =>
+          Promise.resolve(["aaa","bbb","ccc"]),
         save: (filePath: string, item: object) =>
           Promise.resolve({
             ...item,
@@ -32,6 +34,15 @@ describe("FileStore class interfaces", () => {
         filePath: "test"
       })
     )
+  });
+
+  it("getIds()", async () => {
+    assert.equal(
+      await new FileStore("test")
+        .getIds()
+        .then(result => JSON.stringify(result)),
+      JSON.stringify(["aaa","bbb","ccc"])
+    );
   });
 
   it("save()", async () => {
