@@ -31,6 +31,10 @@ console.log(
 ); // thing
 
 console.log(
+  await fileStore.getIds()
+); // [ ...savedItem._id ]
+
+console.log(
   await fileStore.remove(savedItem._id)
 ); // undefined
 ```
