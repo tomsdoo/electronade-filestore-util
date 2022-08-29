@@ -9,6 +9,18 @@ It's an optional module for `electronade-filestore` so `electronade-filestore` s
 npm install electronade-filestore-util
 ```
 
+## Interfaces
+
+``` typescript
+class FileStore {
+  constructor(filePath: string, exposedName?: string);
+  public get(id: string) => Promise<any>;
+  public getIds() => Promise<string[]>;
+  public save(item: object) => Promise<any>;
+  public remove(id: string) => Promise<undefined>;
+}
+```
+
 ## Usage
 
 import and use FileStore class in Renderer process.
