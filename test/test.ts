@@ -10,17 +10,15 @@ describe("FileStore class interfaces", () => {
       filestore: {
         get: (filePath: string, id: string) =>
           Promise.resolve({ _id: id, filePath }),
-        getIds: (filePath: string) =>
-          Promise.resolve(["aaa","bbb","ccc"]),
+        getIds: (filePath: string) => Promise.resolve(["aaa", "bbb", "ccc"]),
         save: (filePath: string, item: object) =>
           Promise.resolve({
             ...item,
-             _id: "dummy",
-             filePath
-           }),
-        remove: (filePath: string, id: string) =>
-          Promise.resolve(undefined)
-      }
+            _id: "dummy",
+            filePath,
+          }),
+        remove: (filePath: string, id: string) => Promise.resolve(undefined),
+      },
     };
   });
 
@@ -28,20 +26,20 @@ describe("FileStore class interfaces", () => {
     assert.equal(
       await new FileStore("test")
         .get("dummyId")
-        .then(result => JSON.stringify(result)),
+        .then((result) => JSON.stringify(result)),
       JSON.stringify({
         _id: "dummyId",
-        filePath: "test"
+        filePath: "test",
       })
-    )
+    );
   });
 
   it("getIds()", async () => {
     assert.equal(
       await new FileStore("test")
         .getIds()
-        .then(result => JSON.stringify(result)),
-      JSON.stringify(["aaa","bbb","ccc"])
+        .then((result) => JSON.stringify(result)),
+      JSON.stringify(["aaa", "bbb", "ccc"])
     );
   });
 
@@ -55,10 +53,6 @@ describe("FileStore class interfaces", () => {
   });
 
   it("remove()", async () => {
-    assert.equal(
-      await new FileStore("test")
-        .remove("dummyId"),
-      undefined
-    );
+    assert.equal(await new FileStore("test").remove("dummyId"), undefined);
   });
 });

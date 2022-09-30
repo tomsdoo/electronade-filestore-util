@@ -1,7 +1,7 @@
 export class FileStore {
   protected filePath: string;
   protected exposedName: string;
-  constructor(filePath: string, exposedName?: string){
+  constructor(filePath: string, exposedName?: string) {
     this.filePath = filePath;
     this.exposedName = exposedName || "electronade";
   }
