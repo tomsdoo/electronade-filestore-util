@@ -10,14 +10,16 @@ describe("FileStore class interfaces", () => {
       filestore: {
         get: async (filePath: string, id: string) =>
           await Promise.resolve({ _id: id, filePath }),
-        getIds: async (filePath: string) => await Promise.resolve(["aaa", "bbb", "ccc"]),
+        getIds: async (filePath: string) =>
+          await Promise.resolve(["aaa", "bbb", "ccc"]),
         save: async (filePath: string, item: object) =>
           await Promise.resolve({
             ...item,
             _id: "dummy",
             filePath,
           }),
-        remove: async (filePath: string, id: string) => await Promise.resolve(undefined),
+        remove: async (filePath: string, id: string) =>
+          await Promise.resolve(undefined),
       },
     };
   });
