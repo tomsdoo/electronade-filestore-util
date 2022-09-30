@@ -5,19 +5,19 @@ import { FileStore } from "../src/";
 
 describe("FileStore class interfaces", () => {
   before(() => {
-    // @ts-ignore
+    // @ts-expect-error
     globalThis.electronade = {
       filestore: {
-        get: (filePath: string, id: string) =>
-          Promise.resolve({ _id: id, filePath }),
-        getIds: (filePath: string) => Promise.resolve(["aaa", "bbb", "ccc"]),
-        save: (filePath: string, item: object) =>
-          Promise.resolve({
+        get: async (filePath: string, id: string) =>
+          await Promise.resolve({ _id: id, filePath }),
+        getIds: async (filePath: string) => await Promise.resolve(["aaa", "bbb", "ccc"]),
+        save: async (filePath: string, item: object) =>
+          await Promise.resolve({
             ...item,
             _id: "dummy",
             filePath,
           }),
-        remove: (filePath: string, id: string) => Promise.resolve(undefined),
+        remove: async (filePath: string, id: string) => await Promise.resolve(undefined),
       },
     };
   });
