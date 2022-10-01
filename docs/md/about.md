@@ -4,6 +4,14 @@ It's a package that provides some utilities for [electronade-filestore](https://
 
 It's an optional module for `electronade-filestore` so `electronade-filestore` should be installed before using `electronade-filestore-util`.
 
+![npm](https://img.shields.io/npm/v/electronade-filestore-util)
+![NPM](https://img.shields.io/npm/l/electronade-filestore-util)
+![npms.io (quality)](https://img.shields.io/npms-io/quality-score/electronade-filestore-util)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/electronade-filestore-util)
+![Maintenance](https://img.shields.io/maintenance/yes/2022)
+
+[![](https://nodei.co/npm/electronade-filestore-util.svg?mini=true)](https://www.npmjs.com/package/electronade-filestore-util)
+
 ## installation
 
 ``` shell
